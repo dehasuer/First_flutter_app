@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         body: Container(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: expandedContainer,
+            children: flexibleContainer,
           ),
         ),
         floatingActionButton: FloatingActionButton(
@@ -154,35 +154,21 @@ List<Widget> get expandedContainer {
 
 List<Widget> get flexibleContainer {
   return [
-    Container(
-      width: 75,
-      height: 75,
-      color: Colors.green,
+    Flexible(
+      flex: 3,
+      child: Container(
+        width: 300,
+        height: 300,
+        color: Colors.green,
+      ),
     ),
-    Container(
-      width: 75,
-      height: 75,
-      color: Colors.red,
-    ),
-    Container(
-      width: 75,
-      height: 75,
-      color: Colors.blue,
-    ),
-    Container(
-      width: 75,
-      height: 75,
-      color: Colors.orange,
-    ),
-    Container(
-      width: 75,
-      height: 75,
-      color: Colors.blue,
-    ),
-    Container(
-      width: 75,
-      height: 75,
-      color: Colors.blue,
+    Flexible(
+      flex: 2,
+      child: Container(
+        width: 100,
+        height: 300,
+        color: Colors.red,
+      ),
     ),
   ];
 }
