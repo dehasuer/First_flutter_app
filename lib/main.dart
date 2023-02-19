@@ -8,21 +8,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primaryColor: Colors.teal, accentColor: Colors.amber),
+      theme: ThemeData(primaryColor: Colors.teal, accentColor: Colors.purple),
       home: Scaffold(
-        backgroundColor: Colors.yellow,
         appBar: AppBar(
           title: Text("Başlık"),
           backgroundColor: Colors.deepPurple,
         ),
-        body: Container(
-          alignment: Alignment.topCenter,
-          width: 200,
-          height: 300,
-          color: Colors.purple,
-          child: Text(
-            "Deha" * 1,
-            textAlign: TextAlign.center,
+        body: Center(
+          child: Container(
+            width: 200,
+            height: 200,
+            color: Colors.red,
+            child: Container(
+              alignment: Alignment.center,
+              color: Colors.blue,
+              margin: EdgeInsets.all(30),
+              width: 50,
+              height: 50,
+              child: Text("Deha"),
+            ),
           ),
         ),
         floatingActionButton: FloatingActionButton(
