@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
             padding: EdgeInsets.all(20),
             child: Text(
               "Deha",
-              style: TextStyle(fontSize: 36),
+              style: TextStyle(fontSize: 128),
             ),
             decoration: BoxDecoration(
                 color: Colors.orange,
