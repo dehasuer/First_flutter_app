@@ -5,6 +5,54 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  Container containerOlustur(String harf, Color renk, {double margin = 0}) {
+    return Container(
+      width: 75,
+      height: 75,
+      color: renk,
+      margin: EdgeInsets.only(top: margin),
+      alignment: Alignment.center,
+      child: Text(
+        harf,
+        style: TextStyle(fontSize: 48),
+      ),
+    );
+  }
+
+  Row dartRowunuOlustur() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        containerOlustur("D", Colors.orange.shade200),
+        containerOlustur("A", Colors.orange.shade400),
+        containerOlustur("R", Colors.orange.shade600),
+        containerOlustur("T", Colors.orange.shade800),
+      ],
+    );
+  }
+
+  Column dersleriColumnOlustur() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Expanded(
+            child: containerOlustur("E", Colors.orange.shade300, margin: 15)),
+        Expanded(
+            child: containerOlustur("R", Colors.orange.shade400, margin: 15)),
+        Expanded(
+            child: containerOlustur("S", Colors.orange.shade500, margin: 15)),
+        Expanded(
+            child: containerOlustur("L", Colors.orange.shade600, margin: 15)),
+        Expanded(
+            child: containerOlustur("E", Colors.orange.shade700, margin: 15)),
+        Expanded(
+            child: containerOlustur("R", Colors.orange.shade800, margin: 15)),
+        Expanded(
+            child: containerOlustur("I", Colors.orange.shade900, margin: 15)),
+      ],
+    );
+  }
+
   String _img1 =
       "https://www.bifikir.com/images/content/lamborghini-huracan-1_g3er.webp";
   String _img2 =
@@ -15,13 +63,17 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primaryColor: Colors.teal, accentColor: Colors.purple),
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Title"),
-          backgroundColor: Colors.deepPurple,
+          title: Text("Flutter Dersleri"),
+          backgroundColor: Colors.cyan,
         ),
         body: Container(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: flexibleContainer,
+          color: Colors.red.shade200,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              dartRowunuOlustur(),
+              Expanded(child: dersleriColumnOlustur()),
+            ],
           ),
         ),
         floatingActionButton: FloatingActionButton(
